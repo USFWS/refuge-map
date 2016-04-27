@@ -1,0 +1,33 @@
+// Colors
+
+$blue: #003976;
+
+@import 'fonts';
+
+html,
+body {
+  font-family: 'Source Sans', 'Hevetica Neue', 'Helvetica', sans-serif;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $blue;
+  font-family: 'Merriweather', Georgia, Arial, serif;
+}
+
+#map {
+  height: 100vh;
+  width: 100%;
+}
+
+@import 'vendor/leaflet';
+@import 'vendor/markercluster';
+@import 'autocomplete';
+@import 'popup';

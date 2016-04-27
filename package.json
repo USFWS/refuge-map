@@ -1,0 +1,61 @@
+{
+  "name": "refuges",
+  "version": "1.0.0",
+  "description": "An interactive map of National Wildlife Refuges",
+  "main": "index.js",
+  "browserify": {
+    "transform": "hbsfy"
+  },
+  "watch": {
+    "htmlmin": "src/index.html",
+    "cp:img": "src/images/*.{svg,jpg,png}",
+    "cp:fonts": "src/fonts/*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npm-watch",
+    "cp": "npm run cp:fonts & npm run cp:img",
+    "cp:fonts": "ncp src/fonts dist/fonts",
+    "cp:img": "ncp src/images dist/images",
+    "watch:sass": "node-sass -w src/scss/main.scss dist/css/styles.css",
+    "build:sass": "node-sass --output-style compressed src/scss/main.scss dist/css/styles.css",
+    "browserify": "browserify src/js/index.js | uglifyjs -mc > dist/js/bundle.js",
+    "watchify": "watchify src/js/index.js -o dist/js/bundle.js -dv",
+    "htmlmin": "htmlmin -o dist/index.html src/index.html",
+    "serve": "browser-sync start --server dist --files 'dist/**/*'",
+    "build": "npm run build:sass & npm run browserify",
+    "start": "npm run build:sass & npm run cp & npm run watch & npm run watch:sass & npm run htmlmin & npm run watchify & npm run serve",
+    "inspect": "browserify --full-paths src/js/index.js | uglifyjs -mc | Discify --open",
+    "publish:demo": "npm run build && gh-pages -d dist"
+  },
+  "keywords": [
+    "NWRS",
+    "National Wildlife Refuge System"
+  ],
+  "author": "Roy Hewitt, @r0yhewitt",
+  "license": "SAX-PD",
+  "dependencies": {
+    "events": "^1.1.0",
+    "leaflet": "https://github.com/Leaflet/Leaflet/archive/v1.0.0-rc.1.tar.gz",
+    "leaflet.markercluster": "https://github.com/Leaflet/Leaflet.markercluster/archive/v1.0.0-rc.1.tar.gz",
+    "lodash.clone": "^4.3.2",
+    "lodash.defaults": "^4.0.1",
+    "lodash.filter": "^4.3.0",
+    "lodash.foreach": "^4.1.1",
+    "lunr": "^0.7.0",
+    "underscore.string": "^3.3.4",
+    "xhr": "^2.2.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.12.5",
+    "browserify": "^13.0.0",
+    "disc": "^1.3.2",
+    "gh-pages": "^0.11.0",
+    "handlebars": "^4.0.5",
+    "hbsfy": "^2.7.0",
+    "html-minifier-cli": "^0.1.0",
+    "ncp": "^2.0.0",
+    "uglifyjs": "^2.4.10",
+    "watchify": "^3.7.0"
+  }
+}
