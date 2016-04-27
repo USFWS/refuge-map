@@ -23,7 +23,9 @@
     "watchify": "watchify src/js/index.js -o dist/js/bundle.js -dv",
     "htmlmin": "htmlmin -o dist/index.html src/index.html",
     "serve": "browser-sync start --server dist --files 'dist/**/*'",
+    "prebuild": "node build/create-dist",
     "build": "npm run build:sass & npm run cp & npm run htmlmin & npm run browserify",
+    "prestart": "node build/create-dist",
     "start": "npm run build:sass & npm run cp & npm run watch & npm run watch:sass & npm run htmlmin & npm run watchify & npm run serve",
     "inspect": "browserify --full-paths src/js/index.js | uglifyjs -mc | Discify --open",
     "publish": "npm run build && gh-pages -d dist"
@@ -54,6 +56,7 @@
     "handlebars": "^4.0.5",
     "hbsfy": "^2.7.0",
     "html-minifier-cli": "^0.1.0",
+    "mkdirp": "^0.5.1",
     "ncp": "^2.0.0",
     "uglifyjs": "^2.4.10",
     "watchify": "^3.7.0"
