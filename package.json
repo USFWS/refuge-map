@@ -23,10 +23,10 @@
     "watchify": "watchify src/js/index.js -o dist/js/bundle.js -dv",
     "htmlmin": "htmlmin -o dist/index.html src/index.html",
     "serve": "browser-sync start --server dist --files 'dist/**/*'",
-    "build": "npm run build:sass & npm run browserify",
+    "build": "npm run build:sass & npm run cp & npm run htmlmin & npm run browserify",
     "start": "npm run build:sass & npm run cp & npm run watch & npm run watch:sass & npm run htmlmin & npm run watchify & npm run serve",
     "inspect": "browserify --full-paths src/js/index.js | uglifyjs -mc | Discify --open",
-    "publish:demo": "npm run build && gh-pages -d dist"
+    "publish": "npm run build && gh-pages -d dist"
   },
   "keywords": [
     "NWRS",
