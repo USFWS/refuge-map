@@ -1,6 +1,6 @@
 # National Wildlife Refuge System Map
 
-An interactive web map of National Wildlife Refuges in the United States.  The data used to create the map comes from a public GIS Web Service called [USFWS Primary Visitor Services](http://services.arcgis.com/QVENGdaPbd4LUkLV/ArcGIS/rest/services/FWSVisitorServices/FeatureServer/0).  This application filters out other types of offices like National Fish Hatcheries as to only display wildlife refuges. For more information about the underlying data checkout [data.gov](https://catalog.data.gov/dataset/usfws-primary-visitor-services)).
+An interactive web map of National Wildlife Refuges in the United States.  The data used to create the map comes from a public GIS Web Service called [USFWS Primary Visitor Services](http://services.arcgis.com/QVENGdaPbd4LUkLV/ArcGIS/rest/services/FWSVisitorServices/FeatureServer/0).  This application filters out other types of offices like National Fish Hatcheries as to only display wildlife refuges. For more information about the underlying data checkout [data.gov](https://catalog.data.gov/dataset/usfws-primary-visitor-services).
 
 ## Development
 
