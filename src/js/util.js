@@ -5,8 +5,10 @@
     filter: require('lodash.filter'),
     defaults: require('lodash.defaults'),
     each: require('lodash.forEach'),
+    clone: require('lodash.clone'),
     slugify: require('underscore.string/slugify'),
-    clone: require('lodash.clone')
+    addClass: require('add-class'),
+    removeClass: require('remove-class')
   };
 
 })();
