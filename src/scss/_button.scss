@@ -1,12 +1,16 @@
 @mixin button($color: #fff, $bg: $blue) {
-  background: $bg;
-  border: 3px solid lighten($bg, 10);
+  background: lighten($bg, 10);
+  border: 3px solid $bg;
   border-radius: 3px;
   color: $color;
+  font-family: 'Source Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 1em;
   padding: 10px;
   transition: background .3s;
 
   &:hover {
-    background: lighten($bg, 10);
+    border: 3px solid lighten($bg, 10);
+    background: $bg;
+    cursor: pointer;
   }
 }
