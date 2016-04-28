@@ -1,0 +1,10 @@
+{{#each .}}
+  <li class="card">
+    <h2><a href="{{ properties.URL }}" target="_blank">{{ properties.ORGNAME }}</a></h2>
+    <p>Phone: {{ properties.PHONE }}</p>
+    <address>
+      {{ properties.ADDRESS }} <br>
+      {{ properties.CITY }}, {{ properties.STATE }} {{ properties.ZIPCODE }} <br>
+    </address>
+  </li>
+{{/each}}
