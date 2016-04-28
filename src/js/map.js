@@ -89,6 +89,7 @@
     });
 
     var guam = L.geoJson(refuges, {
+      onEachFeature: createPopup,
       pointToLayer: customIcon,
       filter: function(feature) {
         return feature.properties.ORGNAME === 'Guam National Wildlife Refuge';
