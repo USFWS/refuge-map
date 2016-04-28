@@ -37,6 +37,7 @@
   "author": "Roy Hewitt, @r0yhewitt",
   "license": "SAX-PD",
   "dependencies": {
+    "add-class": "^1.0.3",
     "events": "^1.1.0",
     "leaflet": "https://github.com/Leaflet/Leaflet/archive/v1.0.0-rc.1.tar.gz",
     "leaflet.markercluster": "https://github.com/Leaflet/Leaflet.markercluster/archive/v1.0.0-rc.1.tar.gz",
@@ -45,6 +46,7 @@
     "lodash.filter": "^4.3.0",
     "lodash.foreach": "^4.1.1",
     "lunr": "^0.7.0",
+    "remove-class": "^1.0.0",
     "underscore.string": "^3.3.4",
     "xhr": "^2.2.0"
   },
