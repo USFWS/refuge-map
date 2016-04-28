@@ -8,24 +8,50 @@
   var emitter = require('./mediator');
   var _ = require('./util');
 
+  var map, opts, cluster;
+
+  var defaults = {
+    active: true,
+    container: document.getElementById('map')
+  };
+
+  var template = require('../templates/popup.hbs');
   var blueGoose = L.icon({
     iconUrl: './images/blue-goose.svg',
     iconSize: [70, 90],
     popupAnchor: [5, -20]
   });
 
-  var map, options, cluster;
-  var template = require('../templates/popup.hbs');
-
-  function init(opts) {
+  function init(options) {
+    opts = _.defaults({}, options, defaults);
     map = L.map('map',{
       zoomControl: false
     }).setView([38.126, -96.637], 4);
-
     new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
     addBasemap();
     addRefuges(opts.data);
+    registerHanlders();
+  }
+
+  function registerHanlders() {
     emitter.on('selected:office', zoomToOffice);
+    emitter.on('toggle:view', toggleView);
+  }
+
+  function toggleView(button) {
+    if (opts.active) hide();
+    else show(button);
+  }
+
+  function show(button) {
+    opts.active = true;
+    _.addClass(opts.container, 'active');
+    button.textContent = 'View a List of Refuges';
+  }
+
+  function hide() {
+    opts.active = false;
+    _.removeClass(opts.container, 'active');
   }
 
   function addBasemap() {
@@ -37,9 +63,17 @@
     }).addTo(map);
   }
 
-  function zoomToOffice(office) {
+  function zoomToOffice(name) {
+    var office = findRefugeByName(name);
     var coords = _.clone(office.geometry.coordinates);
     map.flyTo(coords.reverse(), 12);
+  }
+
+  function findRefugeByName(name) {
+    var offices = _.filter(opts.data.features, function (refuge) {
+      return refuge.properties.ORGNAME.toLowerCase() === name.toLowerCase();
+    });
+    return offices[0];
   }
 
   function addRefuges(refuges) {
