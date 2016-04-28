@@ -100,6 +100,9 @@
       showCoverageOnHover: false
     });
 
+    // Hack to add attribution for Refuges data
+    cluster.getAttribution = function() { return ' | <a href="http://catalog.data.gov/dataset/usfws-primary-visitor-services" target="_blank">Refuge data</a>'; };
+
     cluster.addLayer(markers).addTo(map);
     map.fitBounds(cluster.getBounds());
   }
