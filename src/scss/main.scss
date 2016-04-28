@@ -3,6 +3,14 @@
 $blue: #003976;
 
 @import 'fonts';
+@import 'button';
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 html,
 body {
@@ -22,6 +30,14 @@ h6 {
   font-family: 'Merriweather', Georgia, Arial, serif;
 }
 
+.toggle-view {
+  @include button;
+  left: 15px;
+  position: fixed;
+  top: 15px;
+  z-index: 5000;
+}
+
 #map {
   height: 100vh;
   width: 100%;
@@ -31,3 +47,6 @@ h6 {
 @import 'vendor/markercluster';
 @import 'autocomplete';
 @import 'popup';
+@import 'list';
+@import 'search-input';
+@import 'card';
