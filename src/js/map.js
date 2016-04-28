@@ -24,7 +24,7 @@
 
   function init(options) {
     opts = _.defaults({}, options, defaults);
-    if (opts.active) _.addClass(opts.container, 'active');
+    if (opts.active) show();
 
     map = L.map('map',{
       zoomControl: false
@@ -49,7 +49,7 @@
   function show(button) {
     opts.active = true;
     _.addClass(opts.container, 'active');
-    button.textContent = 'View a List of Refuges';
+    if (button) button.textContent = 'View a List of Refuges';
   }
 
   function hide() {

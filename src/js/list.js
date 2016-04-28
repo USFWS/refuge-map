@@ -16,6 +16,7 @@
 
   function init(options) {
      opts = _.defaults({}, options, defaults);
+     if (opts.active) show();
      render(lunr.getAll());
      registerHandlers();
   }
@@ -38,7 +39,7 @@
   function show(button) {
     opts.active = true;
     _.addClass(opts.container, 'active');
-    button.textContent = 'View a Map of Refuges';
+    if (button) button.textContent = 'View a Map of Refuges';
   }
 
   function search() {
