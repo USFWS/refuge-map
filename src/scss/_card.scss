@@ -1,0 +1,12 @@
+.card {
+  background: $blue;
+  border-radius: 3px;
+  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.16), 0 3px 10px 0 rgba(0,0,0,0.12);
+  color: white;
+  margin: 1em;
+  padding: 1em;
+
+  a {
+    color: white;
+  }
+}
