@@ -24,9 +24,12 @@
 
   function init(options) {
     opts = _.defaults({}, options, defaults);
+    if (opts.active) _.addClass(opts.container, 'active');
+
     map = L.map('map',{
       zoomControl: false
     }).setView([38.126, -96.637], 4);
+
     new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
     addBasemap();
     addRefuges(opts.data);
