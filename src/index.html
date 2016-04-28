@@ -29,12 +29,20 @@
   </head>
   <body>
 
-    <div class="autocomplete-widget">
-      <input type="search" class="map-autocomplete" placeholder="Find your Refuge!">
-      <ul class="autocomplete-results"></ul>
+    <button class="toggle-view">View a List of Refuges</button>
+
+    <div class="text-list">
+      <input type="search" class="text-list-search search-input" placeholder="Find your Refuge!">
+      <p class="text-search-details">Search by Refuge Name, State abbreviation, or City</p>
+      <ul class="refuge-list"></ul>
     </div>
 
-    <div id="map"></div>
+    <div id="map">
+      <div class="autocomplete-widget">
+        <input type="search" class="map-autocomplete search-input" placeholder="Find your Refuge!">
+        <ul class="autocomplete-results"></ul>
+      </div>
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
