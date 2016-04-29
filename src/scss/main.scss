@@ -30,14 +30,6 @@ h6 {
   font-family: 'Merriweather', Georgia, Arial, serif;
 }
 
-.toggle-view {
-  @include button;
-  left: 15px;
-  position: fixed;
-  top: 15px;
-  z-index: 5000;
-}
-
 #map {
   display: none;
 

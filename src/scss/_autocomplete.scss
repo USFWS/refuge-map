@@ -1,14 +1,14 @@
 .autocomplete-widget {
   left: 0;
   margin: auto;
-  max-width: 500px;
+  max-width: 400px;
   position: absolute;
   right: 0;
   width: 100%;
   top: 15px;
   z-index: 5000;
 
-  @media (min-width: 800px) {
+  @media (min-width: 700px) {
     left: auto;
     right: 15px;
   }
@@ -23,14 +23,24 @@
   color: $blue;
   list-style: none;
   margin: 0;
+  max-height: 80vh;
+  overflow-y: scroll;
   padding: 0;
+  z-index: 5001;
 
   li {
     margin: 0;
+
+    &:hover {
+      background: darken(white, 5);
+    }
   }
 
   a {
+    color: $blue;
     display: block;
+    font-family: 'Source Sans';
+    font-size: 1.3em;
     padding: .5em 1em;
   }
 }

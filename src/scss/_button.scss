@@ -14,3 +14,17 @@
     cursor: pointer;
   }
 }
+
+.toggle-view {
+  @include button;
+  right: 15px;
+  position: fixed;
+  top: 75px;
+  z-index: 5000;
+
+  @media (min-width: 700px) {
+    left: 15px;
+    right: auto;
+    top: 15px;
+  }
+}
