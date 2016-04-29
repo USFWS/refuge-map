@@ -11,7 +11,8 @@
 
   var defaults = {
     active: false,
-    container: document.querySelector('.text-list')
+    container: document.querySelector('.text-list'),
+    minLength: 1
   };
 
   function init(options) {
@@ -45,6 +46,7 @@
   function search() {
     var term = opts.input.value;
     if (term.length === 0) render(lunr.getAll());
+    if (term.length <= opts.minLength) return;
     else render(lunr.search(term));
   }
 
